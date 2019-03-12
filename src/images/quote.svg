@@ -1,0 +1,25 @@
+
+<svg width="177px" height="174px" viewBox="0 0 177 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M4.48763021,58.6196696 L4.48763021,0 L58.6196696,0 L58.6196696,46.2786865 C58.6196696,71.3347471 55.7214374,89.3785798 49.9248861,100.410726 C41.8845084,115.556554 29.356666,126.9625 12.3409831,134.628906 L0,114.715047 C10.0972185,110.601366 17.623273,104.103716 22.5783895,95.2219035 C27.5335059,86.340091 30.2915011,74.1394683 30.8524577,58.6196696 L4.48763021,58.6196696 Z M83.4876302,58.6196696 L83.4876302,0 L137.61967,0 L137.61967,46.2786865 C137.61967,71.3347471 134.721437,89.3785798 128.924886,100.410726 C120.884508,115.556554 108.356666,126.9625 91.3409831,134.628906 L79,114.715047 C89.0972185,110.601366 96.623273,104.103716 101.578389,95.2219035 C106.533506,86.340091 109.291501,74.1394683 109.852458,58.6196696 L83.4876302,58.6196696 Z" id="path-1"></path>
+        <filter x="-21.8%" y="-26.0%" width="148.0%" height="149.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="3" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.765359269   0 0 0 0 0.765359269   0 0 0 0 0.765359269  0 0 0 0.424564085 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-347.000000, -5285.000000)">
+            <g id="section-8-TESTIMONIALS" transform="translate(-193.000000, 5135.000000)">
+                <g id="slider" transform="translate(0.000000, 167.000000)">
+                    <g id="testimonBox-2-main" transform="translate(556.000000, 0.000000)">
+                        <g id="quote-icon" transform="translate(68.809835, 67.314453) scale(1, -1) translate(-68.809835, -67.314453) ">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

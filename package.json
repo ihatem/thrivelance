@@ -73,11 +73,13 @@
     "webpackbar": "^3.1.5"
   },
   "dependencies": {
+    "animejs": "^3.0.1",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "enquirer": "^2.3.0",
     "figlet": "^1.2.1",
     "normalize.css": "^8.0.1",
+    "swiper": "^4.5.0",
     "webpack-dev-server": "^3.1.10"
   }
 }

@@ -1,0 +1,36 @@
+header
+  @include gradient
+  padding: 2em $paddingSide
+  nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    svg
+      width: auto
+      height: 100%
+
+    .navMenu
+      ul
+        list-style: none
+        display: flex
+        align-items: center
+        li
+          margin-right: 2.1em
+          text-transform: uppercase
+          color: $white
+          &:last-child
+            margin-right: 0
+
+  .headerWrap
+    display: flex
+    justify-content: space-between
+    margin-top: 11.3em
+
+    .headline
+      .subtitle
+        margin: .5em 0
+        width: 60%
+    svg
+      width: 26em
+      height: auto
+      margin-top: -6em

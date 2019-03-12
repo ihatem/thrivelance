@@ -1,4 +1,5 @@
 module.exports = {
+  "ignoreFiles": ["**/*.sass"],
   "extends": "stylelint-config-standard",
   // .sass syntax support
   "rules": {
@@ -15,6 +16,7 @@ module.exports = {
     "declaration-block-trailing-semicolon": null,
     "no-invalid-double-slash-comments" : null,
     "color-hex-length" : null,
-    "color-hex-case" : null
+    "color-hex-case" : null,
+    "declaration-block-trailing-semicolon" : "never"
   }
 }
