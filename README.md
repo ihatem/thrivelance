@@ -12,9 +12,12 @@ Gather and team up with freelancers around the world
 - [x] sass styling
 - [x] slider
 - [x] js animation
-- [ ] buttons wave & shadow
+- [x] buttons wave & shadow
 - [ ] waves bg
 - [ ] preview section
-- [ ] contact sections
-- [ ] footer
+- [x] contact sections
+- [x] footer
 - [ ] responsive
+- [x] plans yearly change js
+- [ ] clean sass (typography & styles) files & js file
+- [ ] update meta data

@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700')
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700')
 
-$light: 300
-$regular: 400
-$semiBold: 600
-$bold: 700
-
 *
   font-family: "Open Sans", sans-serif
 
@@ -125,7 +120,7 @@ section, footer
         font-size: .4em
     .text
       color: $grayL
-    .button
+    .planBtn
       font-family: "Montserrat", sans-serif
       font-weight: $semiBold
       text-decoration: none
@@ -154,8 +149,48 @@ section, footer
       font-weight: $bold
       color: $grayD
 
+  .contactWrap
+    .title
+      font-size: 1.5em
+      font-weight: $bold
+      text-transform: uppercase
+    .subtitle
+      color: $grayD
+      font-size: 1.4em
+      font-weight: $semiBold
+    .text
+      color: $grayL
+      font-size: 1.4em
+      font-weight: $regular
+    .sendBtn
+      color: $white
+      font-weight: $semiBold
+    .formHead
+      font-size: 1.9em
+      font-family: "Montserrat", sans-serif
+      color: $grayL
+      font-weight: $light
+
 footer
   .copyText
+    color: $grayL
+    text-align: center
   table
+    display: flex
+    justify-content: flex-end
+    text-align: left
     th
+      font-family: "Montserrat", sans-serif
+      font-weight: $bold
+      font-size: 1.4em
+      color: $grayD
     td
+      .footerLink
+        font-family: "Montserrat", sans-serif
+        font-weight: $light
+        font-size: 1.4em
+        color: $grayL
+        text-decoration: none
+        border-bottom: .1em solid transparent
+        &:hover
+          border-color: $pink

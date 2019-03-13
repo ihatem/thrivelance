@@ -1,0 +1,65 @@
+footer
+  background: $white
+  .newsletterWrap
+    display: flex
+    h2, h3
+      text-align: left !important
+    .newsletterHead
+      width: 35%
+      .subNews
+        margin: 1em 0
+      .newsletterForm
+        display: flex
+        input
+          border: 0
+          width: 70%
+          border-radius: 4em 0 0 4em
+          background: $grayI
+          color: $grayD
+          font-weight: $semiBold
+          margin-bottom: 1em
+          padding: 1em 1.5em
+          border: .15em solid $grayI
+          transition: .3s border ease-in-out
+          &::placeholder
+            color: $grayL
+          &:focus
+            border: .15em solid $grayS
+          &:valid
+            box-shadow: none
+            //border: .1em solid $green
+          &:invalid
+            box-shadow: none
+            border: .15em solid $red
+        button
+          height: 3.4em
+          width: 3.4em
+          display: flex
+          align-items: center
+          justify-content: center
+          border-radius: 5em
+          margin-left: -1.7em
+          background: $pink
+          transform: scale(1.2)
+          cursor: pointer
+          transition: background .3s ease-in-out
+          &:hover
+            background: $pinkHover
+          svg
+            height: 50%
+
+    .sitemapBox
+      width: 65%
+      table
+        tr
+          td
+            padding-right: 2.5em
+            padding-top: .8em
+            &:last-child
+              padding-right: 0
+
+  hr
+    margin-top: 8em
+    border: 0
+    height: .1em
+    background: $grayS

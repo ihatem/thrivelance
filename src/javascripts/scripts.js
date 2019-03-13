@@ -2,6 +2,24 @@ import Swiper from 'swiper'
 import anime from 'animejs/lib/anime.es.js'
 
 const planBox = document.querySelectorAll('.planBox')
+const toggle = document.getElementById('toggle')
+
+const toggleCheck = () => {
+  if (toggle.checked) {
+    document.querySelectorAll('.price > p')[1].innerHTML = 69
+    document.querySelectorAll('.price > p')[2].innerHTML = 99
+    document.querySelectorAll('.price > span')[2].innerHTML = '€'
+  } else {
+    document.querySelectorAll('.price > p')[1].innerHTML = 9
+    document.querySelectorAll('.price > p')[2].innerHTML = 5
+    document.querySelectorAll('.price > span')[2].innerHTML = '%'
+  }
+}
+
+toggleCheck()
+toggle.addEventListener('change', () => {
+  toggleCheck()
+})
 
 planBox.forEach( (elem, i) => {
   elem.addEventListener('mouseenter', () => {
@@ -40,7 +58,7 @@ let swiper2 = new Swiper('.testimonSlider', {
   },
 });
 
-//swiper2.slideTo(1, 0);
+// swiper2.slideTo(0, 0);
 
 function isScrolledIntoView(el) {
   var elemTop = el.getBoundingClientRect().top;

@@ -1,0 +1,75 @@
+#contact
+  .contactWrap
+    display: flex
+    justify-content: space-between
+    .contactInfosWrap
+      display: flex
+      flex-direction: column
+      width: 50%
+      .subtitle
+        margin-top: 2em
+      .socialIconsWrap
+        display: flex
+        margin-top: auto
+        span
+          width: 3em
+          height: 3em
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: 3em
+          background: $grayS
+          transition: .3s background ease-in-out
+          cursor: pointer
+          margin-right: .5em
+          &:hover
+            background: $pinkHover
+          &:last-child
+            margin-right: 0
+          svg
+            width: 45%
+            height: 45%
+
+    .contactForm
+      width: 50%
+      display: flex
+      flex-direction: column
+      .formHead
+        margin-bottom: 1em
+      input
+        border: 0
+        border-radius: .5em
+        background: $grayI
+        color: $grayD
+        font-weight: $semiBold
+        margin-bottom: 1em
+        padding: 1em 1.5em
+        border: .15em solid $grayI
+        transition: .3s border ease-in-out
+        &::placeholder
+          color: $grayL
+        &:focus
+          border: .15em solid $grayS
+        &:valid
+          box-shadow: none
+          //border: .1em solid $green
+        &:invalid
+          box-shadow: none
+          border: .15em solid $red
+
+      textarea
+        border: 0
+        background: $grayI
+        border-radius: .5em
+        padding: 1em 1.5em
+        resize: none
+        color: $grayD
+        font-weight: $semiBold
+        height: 10em
+        margin-bottom: 1em
+        border: .15em solid $grayI
+        transition: .3s border ease-in-out
+        &::placeholder
+          color: $grayL
+        &:focus
+          border: .15em solid $grayS

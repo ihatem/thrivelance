@@ -34,26 +34,6 @@
           align-self: flex-end
         span
           align-self: flex-start
-      .button
-        padding: 1em 0
-        width: 100%
-        margin-left: -2em
-        width: calc(100% + 4em)
-        background-image: url('../images/wave.svg')
-        background-size: 200px 0
-        background-repeat: repeat-x
-        display: flex
-        justify-content: center
-        &:hover
-          animation: wave-animation .5s infinite linear, loading-animation .5s linear
-          animation-fill-mode: forwards
-        &:hover > span
-          transform: translateX(-.3em)
-        &:hover > i
-          opacity: 1
-          transform: translateX(.3em)
-
-        span
           transition: all .3s ease-in-out
           transform: translateX(.3em)
 
@@ -64,15 +44,3 @@
 
   .content
     margin-top: 4em
-
-
-@keyframes wave-animation
-  0%
-    background-position: 0 bottom
-  100%
-    background-position: 200px bottom
-@keyframes loading-animation
-  0%
-    background-size: 200px 0px
-  100%
-    background-size: 200px 200px
