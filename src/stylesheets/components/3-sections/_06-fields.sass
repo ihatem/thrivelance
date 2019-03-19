@@ -1,4 +1,5 @@
 #fields
+  position: relative
   .fieldBoxesWrap
     display: flex
     justify-content: center
@@ -16,6 +17,7 @@
       border-radius: 1em
       cursor: pointer
       transition: box-shadow .2s ease-in-out 1ms, transform .3s ease-in-out
+      z-index: 3
       &:hover
         transform: translateY(-.5em)
         box-shadow: 0px 10px 30px -8px lighten($grayL, 20%)
@@ -34,3 +36,5 @@
     display: flex
     justify-content: center
     margin-top: 4em
+    p
+      z-index: 3

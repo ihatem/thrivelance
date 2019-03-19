@@ -1,0 +1,46 @@
+.oceanTestimon
+  bottom: 50% !important
+.ocean
+  height: 198px
+  width: 100%
+  position: absolute
+  bottom: 0
+  left: 0
+  overflow: hidden
+  //background: #015871
+
+  .waveWhite
+    background: transparent url("../images/waveBG-white.svg") !important
+  .wave
+    background: transparent url("../images/waveBG.svg")
+    background-repeat: repeat-x
+    position: absolute
+    bottom: -1em
+    width: 6400px
+    height: 198px
+    animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite
+    transform: translate3d(0, 0, 0)
+    opacity: .3
+    &:nth-of-type(2)
+      bottom: -1.5em
+      animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite
+      opacity: .5
+    &:nth-of-type(3)
+      bottom: -2em
+      animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.2s infinite, swell 7s ease -2s infinite
+      opacity: 1
+
+@keyframes wave
+  0%
+    margin-left: 0
+
+  100%
+    margin-left: -1600px
+
+
+@keyframes swell
+  0%, 100%
+    transform: translate3d(0, -25px, 0)
+
+  50%
+    transform: translate3d(0, 5px, 0)

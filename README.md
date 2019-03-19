@@ -13,7 +13,7 @@ Gather and team up with freelancers around the world
 - [x] slider
 - [x] js animation
 - [x] buttons wave & shadow
-- [ ] waves bg
+- [x] waves bg
 - [ ] preview section
 - [x] contact sections
 - [x] footer
@@ -21,3 +21,4 @@ Gather and team up with freelancers around the world
 - [x] plans yearly change js
 - [ ] clean sass (typography & styles) files & js file
 - [ ] update meta data
+- [ ] fix features box align bug on responsive

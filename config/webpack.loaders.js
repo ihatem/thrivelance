@@ -5,14 +5,15 @@ const config = require('./site.config');
 const sourceMap = config.env !== 'production';
 
 // HTML loaders
-const html = {
-  test: /\.(html)$/,
-  use: [
-    {
-      loader: 'html-loader',
-    },
-  ],
-};
+// const html = {
+//   test: /\.(html)$/,
+//   exclude: /node_modules/,
+//   use: [
+//     {
+//       loader: 'html-loader',
+//     },
+//   ],
+// };
 
 // Javascript loaders
 const js = {
@@ -122,7 +123,7 @@ const fonts = {
 };
 
 module.exports = [
-  html,
+  //html,
   js,
   css,
   sass,
