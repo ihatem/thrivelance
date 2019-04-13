@@ -3,6 +3,15 @@ import anime from 'animejs/lib/anime.es.js'
 
 const planBox = document.querySelectorAll('.planBox')
 const toggle = document.getElementById('toggle')
+const hamburger = document.getElementById('hamburger')
+
+hamburger.addEventListener('click', () => {
+  if (hamburger.classList.contains('is-active')) {
+   hamburger.classList.remove('is-active');
+  } else {
+    hamburger.classList.add('is-active');
+  }
+})
 
 const toggleCheck = () => {
   if (toggle.checked) {
@@ -41,13 +50,13 @@ planBox.forEach( (elem, i) => {
 });
 
 
-let swiper = new Swiper('.tagsWrap', {
+new Swiper('.tagsWrap', {
   slidesPerView: 'auto',
   spaceBetween: 10,
   freeMode: true,
 });
 
-let swiper2 = new Swiper('.testimonSlider', {
+new Swiper('.testimonSlider', {
   slidesPerView: 2,
   spaceBetween: 30,
   loop: true,
@@ -58,7 +67,68 @@ let swiper2 = new Swiper('.testimonSlider', {
   },
 });
 
-// swiper2.slideTo(0, 0);
+new Swiper('.logosWrap', {
+  effect: "slider",
+  slidesPerView: 5,
+  spaceBetween: 30,
+	allowSlidePrev: false,
+	allowSlideNext: false,
+	autoplay: false,
+	keyboard: false,
+  loop: true,
+  centeredSlides: true,
+  breakpoints: {
+    1175: {
+      slidesPerView: 3,
+      allowSlidePrev: true,
+      allowSlideNext: true,
+      spaceBetween: 10,
+      autoplay: true,
+      keyboard: true,
+    },
+    600: {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+    },
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+new Swiper('.profilesWrap', {
+  effect: "slider",
+  slidesPerView: 3,
+  spaceBetween: 30,
+	allowSlidePrev: false,
+	allowSlideNext: false,
+	autoplay: false,
+	keyboard: false,
+  loop: true,
+  centeredSlides: true,
+  breakpoints: {
+    1175: {
+      allowSlidePrev: true,
+      allowSlideNext: true,
+      spaceBetween: 10,
+      autoplay: true,
+      keyboard: true,
+      slidesPerView: 2,
+    },
+    600: {
+      spaceBetween: 5,
+    },
+    380: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    }
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
 
 function isScrolledIntoView(el) {
   var elemTop = el.getBoundingClientRect().top;
@@ -88,7 +158,7 @@ let scroll = () => {
     console.log('counting');
     animateValue(0, 0, 3, 600);
     animateValue(1, 0, 1, 600);
-    animateValue(2, 0, 250, 600);
+    animateValue(2, 0, 74, 600);
     animateValue(3, 0, 3, 600);
     window.onscroll = null;
   }

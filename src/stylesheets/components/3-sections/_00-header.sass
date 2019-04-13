@@ -2,6 +2,11 @@ header
   @include gradient
   padding: 2em $paddingSide
   position: relative
+  @include screen(large)
+    padding: 2em $paddingSideTablet
+  @include screen(small)
+    padding: 2em $paddingSideMobile
+    
   nav
     display: flex
     align-items: center
@@ -9,8 +14,25 @@ header
     svg
       width: auto
       height: 100%
+      
+    
+    #hamburger
+      display: none
+      //z-index: 100
+      padding: 0
+      width: 40px
+      height: 24px
+      .hamburger-inner
+        background: $white
+        &::after, &::before
+          background: $white
+      @include screen(large)
+        display: block
+      
 
     .navMenu
+      @include screen(large) 
+        display: none
       ul
         list-style: none
         display: flex
@@ -26,13 +48,30 @@ header
     display: flex
     justify-content: space-between
     margin-top: 11.3em
+    @include screen(large)
+      margin-bottom: 11.3em
 
     .headline
+      @include screen(large)
+        display: flex
+        flex-direction: column
+        //align-content: center
+        justify-content: center
+        text-align: center
+        
       .subtitle
         margin: .5em 0
         width: 60%
+        @include screen(large)
+          width: 100%
+      .buttons-wrap 
+        display: flex
+        @include screen(large)
+          justify-content: center
     svg
       width: 26em
       height: auto
       margin-top: -6em
       z-index: 3
+      @include screen(large)
+        display: none

@@ -28,11 +28,15 @@ header
       font-size: 2.5em
       text-transform: uppercase
       color: $white
+      @include screen(x-small)
+        font-size: 1.5em
     .subtitle
       font-family: "Montserrat", sans-serif
       font-weight: $light
       font-size: 1.9em
       color: $white
+      @include screen(x-small)
+        font-size: 1em
 
 section, footer
   .head
@@ -83,23 +87,29 @@ section, footer
       font-family: "Montserrat", sans-serif
       font-weight: $light
       color: $grayD
+      @include screen(x-small)
+        font-size: .9em
     .text
       color: $grayL
       font-weight: $light
       font-style: italic
+      @include screen(x-small)
+        font-size: .75em
 
   .profileBox
     .title
       font-family: "Montserrat", sans-serif
       font-weight: $semiBold
       font-size: 1.6em
+      @include screen(x-small)
+        font-size: 1.4em
     .subtitle
       font-family: "Montserrat", sans-serif
       font-weight: $light
       font-size: 1em
     .text
       font-weight: $light
-      font-size: .9em
+      font-size: 1em
       color: $grayL
 
   .planBox
@@ -139,6 +149,8 @@ section, footer
       p
         line-height: 45pt
         font-weight: $light
+        @include screen(large)
+          font-size: .8em
       span
         font-size: 18pt
         font-weight: $semiBold
@@ -148,6 +160,9 @@ section, footer
       line-height: 24pt
       font-weight: $bold
       color: $grayD
+      @include screen(large)
+        font-size: 1.7em
+        line-height: 1.2em
 
   .contactWrap
     .title

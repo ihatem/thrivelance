@@ -1,5 +1,9 @@
 section, footer
   padding: $paddingTop $paddingSide
+  @include screen(large)
+    padding: $paddingTop $paddingSideTablet
+  @include screen(small)
+    padding: $paddingTop $paddingSideMobile
 body
   background: $whiteBG
 .head

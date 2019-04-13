@@ -2,12 +2,29 @@
   .figuresWrap
     display: flex
     justify-content: center
+    @include screen(large)
+      display: grid 
+      grid-template-columns: 2fr 2fr
     .figureBox
       display: flex
       margin-right: 4em
+      @include screen(large)
+        margin-right: 2em
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+        margin-bottom: 1em
+      &:nth-of-type(even)
+        @include screen(large)
+          margin-right: 0
+
       .figure
         display: flex
         margin-right: 15px
+        @include screen(large)
+          margin-right: 0
+          margin-bottom: .1em
         p
           align-self: flex-end
         span

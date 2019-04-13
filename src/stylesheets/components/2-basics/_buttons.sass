@@ -18,6 +18,9 @@ button
   cursor: pointer
   border-radius: 4em
   border: .2em solid $pink
+  @include screen(x-small)
+    padding: 1em 1.5em
+    font-size: .9em
 .signupHead
   background: $pink
   color: $white
@@ -26,6 +29,9 @@ button
     background: $pinkHover
     box-shadow: 0px 17px 31px -15px $pinkHover
     transform: translateY(-.2em)
+  @include screen(x-small)
+    margin-right: .5em
+
 .loginHead
   color: $pink
   background: inherit

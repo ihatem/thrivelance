@@ -7,7 +7,7 @@ Gather and team up with freelancers around the world
 - [x] color vars
 - [x] text style vars
 - [x] sketch template
-- [ ] mobile version template
+- [x] mobile version template
 - [x] html templating
 - [x] sass styling
 - [x] slider
@@ -21,4 +21,4 @@ Gather and team up with freelancers around the world
 - [x] plans yearly change js
 - [ ] clean sass (typography & styles) files & js file
 - [ ] update meta data
-- [ ] fix features box align bug on responsive
+- [x] fix features box align bug on responsive

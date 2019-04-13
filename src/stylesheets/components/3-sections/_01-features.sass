@@ -3,6 +3,12 @@
     display: flex
     justify-content: center
     text-align: center
+    @include screen(large)
+      display: grid
+      grid-template-columns: 2fr 2fr
+    @include screen(x-small)
+      display: flex
+      flex-direction: column
 
     .featureBox
       padding: 3em 2em
@@ -15,3 +21,5 @@
 
       svg
         margin-bottom: 2em
+        width: 5em
+        height: 5em
