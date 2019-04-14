@@ -4,8 +4,13 @@
   padding-bottom: 0
   position: relative
   background: linear-gradient(to bottom, $white 0%, $white 50%, $whiteBG 50%, $whiteBG 100%)
+  .head 
+    @include screen(x-small)
+      padding: 0 2em
   .testimonSlider
     padding: 4.25em 0
+    @include screen(x-small)
+      padding: 4.25em 2em
     .swiper-slide-active
       transform: scale(1) !important
       opacity: 1 !important
@@ -14,7 +19,7 @@
       flex-direction: column
       box-sizing: border-box
       border-radius: 1em
-      padding: 8em 8em
+      padding: 4em
       align-items: center
       justify-content: center
       box-shadow: 0px 10px 30px -8px lighten($grayL, 20%)
@@ -31,6 +36,8 @@
         position: absolute
         top: -4.25em
         left: -4.25em
+        @include screen(x-small)
+          display: none
       img
         width: 8em
         height: 8em

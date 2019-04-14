@@ -5,42 +5,82 @@
     justify-content: center
     margin-bottom: 2em
   .planBoxesWrap
-    //background: gray
     display: flex
-    justify-content: center
-    align-items: center
-    height: 26em + 5em
-    .planBox
-      display: flex
-      flex-direction: column
-      justify-content: space-between
-      border: .1em solid lighten($grayL, 30%)
-      margin-right: 2em
-      padding: 2em 2em 0 2em
-      border-radius: .6em
-      overflow: hidden
-      height: 26em
-      transition: box-shadow .1s ease-in-out
-      &:hover
-        box-shadow: 0px 10px 30px -8px lighten($grayL, 30%)
-
-      &:last-child
-        margin-right: 0
-      .price
+    flex-direction: column
+    @include screen(large)
+        width: 50%
+    @include screen(med)
+        width: 80%
+    @include screen(small)
+        width: 100%
+    .swiper-pagination-plans
+      display: none
+      justify-content: center
+      margin-bottom: 2em
+      @include screen(large)
         display: flex
-        justify-content: center
-        margin: .5em 0
-        p
-          align-self: flex-end
-        span
-          align-self: flex-start
-          transition: all .3s ease-in-out
-          transform: translateX(.3em)
+      .swiper-pagination-bullet
+        // transition: all .3s ease-in-out
+        //font-size: 4vmin
+        width: auto
+        border-radius: 0
+        height: auto
+        background: $grayI
+        opacity: 1
+        margin: 0
+        padding: .5em 1em
+        color: $grayS
+        //transition: width .3s ease-in-out .1s, opacity .3s ease-in-out
 
-        i
-          opacity: 0
-          transition: all .3s ease-in-out
-          transform: translateX(.6em)
+        &:nth-child(1)
+          border-radius: 20px 0 0 20px 
+        &:nth-child(2)
+          border-radius: 0 
+        &:nth-child(3)
+          border-radius: 0 20px 20px 0
+        @include screen(x-small)
+          font-size: .7em
+      .swiper-pagination-bullet-active
+        color: $white
+        background: $pink
+
+    .swiper-wrapper
+      display: flex
+      height: 26em + 5em
+      .planBox
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        box-sizing: border-box
+        border: .1em solid lighten($grayL, 30%)
+        //margin-right: 2em
+        padding: 2em 2em 0 2em
+        border-radius: .6em
+        overflow: hidden
+        height: 26em
+        transition: box-shadow .1s ease-in-out
+        &:hover
+          box-shadow: 0px 10px 30px -8px lighten($grayL, 30%)
+        @include screen(large)
+          margin: 0
+
+        &:last-child
+          margin-right: 0
+        .price
+          display: flex
+          justify-content: center
+          margin: .5em 0
+          p
+            align-self: flex-end
+          span
+            align-self: flex-start
+            transition: all .3s ease-in-out
+            transform: translateX(.3em)
+
+          i
+            opacity: 0
+            transition: all .3s ease-in-out
+            transform: translateX(.6em)
 
   .content
     margin-top: 4em

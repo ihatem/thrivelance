@@ -4,15 +4,26 @@
   .contactWrap
     display: flex
     justify-content: space-between
+    @include screen(med)
+      justify-content: center
+      flex-direction: column
     .contactInfosWrap
       display: flex
       flex-direction: column
       width: 50%
+      @include screen(med)
+        order: 2
+        width: 100%
+        justify-content: center
+        text-align: center
       .subtitle
         margin-top: 2em
       .socialIconsWrap
         display: flex
         margin-top: auto
+        @include screen(med)
+          justify-content: center
+          margin-top: 2em
         span
           width: 3em
           height: 3em
@@ -28,6 +39,9 @@
             background: $pinkHover
           &:last-child
             margin-right: 0
+          @include screen(small) 
+            width: 2.5em
+            height: 2.5em
           svg
             width: 45%
             height: 45%
@@ -36,6 +50,11 @@
       width: 50%
       display: flex
       flex-direction: column
+      @include screen(med)
+        order: 1
+        width: 100%
+        justify-content: center
+        margin-bottom: 4em
       .formHead
         margin-bottom: 1em
       input

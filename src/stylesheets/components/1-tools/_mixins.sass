@@ -13,6 +13,7 @@ $breakpoint-x-small: 485px
 $breakpoint-small: 600px
 $breakpoint-med-small: 960px
 $breakpoint-med: 1175px
+$breakpoint-med-large: 1356px
 $breakpoint-large: 1690px
 
 =screen($size, $type: max, $pixels: $breakpoint-small)
@@ -27,6 +28,9 @@ $breakpoint-large: 1690px
       @content
   @else if $size == "large"
     @media screen and ($type + -width: $breakpoint-med)
+      @content
+  @else if $size == "large-med"
+    @media screen and ($type + -width: $breakpoint-med-large)
       @content
   @else if $size == "x-large"
     @media screen and ($type + -width: $breakpoint-large)

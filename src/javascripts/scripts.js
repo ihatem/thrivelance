@@ -1,5 +1,6 @@
 import Swiper from 'swiper'
 import anime from 'animejs/lib/anime.es.js'
+import { timeout } from 'q';
 
 const planBox = document.querySelectorAll('.planBox')
 const toggle = document.getElementById('toggle')
@@ -57,10 +58,19 @@ new Swiper('.tagsWrap', {
 });
 
 new Swiper('.testimonSlider', {
+  effect: "slider",
   slidesPerView: 2,
   spaceBetween: 30,
   loop: true,
   centeredSlides: true,
+  breakpoints: {
+    700: {
+      spaceBetween: 0,
+    },
+    485: {
+      slidesPerView: 1,
+    },
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -129,6 +139,40 @@ new Swiper('.profilesWrap', {
     clickable: true,
   },
 });
+
+
+
+      
+new Swiper('.planBoxesWrap', {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  allowSlidePrev: false,
+	allowSlideNext: false,
+	autoplay: false,
+	keyboard: false,
+  breakpoints: {
+    1175: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      allowSlidePrev: true,
+      allowSlideNext: true,
+      autoplay: true,
+      keyboard: true,
+    },
+  },
+  pagination: {
+    el: '.swiper-pagination-plans',
+    clickable: true,
+    renderBullet: function (index, className) {
+      var tab = ["FREE", "PREMIUM", "ENTREPRISE"];
+      console.log(tab);
+      return '<span class="' + className + '">' + tab[index] + '</span>';
+    },
+  },
+  
+});
+
+
 
 function isScrolledIntoView(el) {
   var elemTop = el.getBoundingClientRect().top;

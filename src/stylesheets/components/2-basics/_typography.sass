@@ -130,6 +130,8 @@ section, footer
         font-size: .4em
     .text
       color: $grayL
+      @include screen(x-small)
+        font-size: .8em
     .planBtn
       font-family: "Montserrat", sans-serif
       font-weight: $semiBold
@@ -149,7 +151,7 @@ section, footer
       p
         line-height: 45pt
         font-weight: $light
-        @include screen(large)
+        @include screen(small)
           font-size: .8em
       span
         font-size: 18pt
@@ -160,7 +162,7 @@ section, footer
       line-height: 24pt
       font-weight: $bold
       color: $grayD
-      @include screen(large)
+      @include screen(small)
         font-size: 1.7em
         line-height: 1.2em
 
@@ -177,6 +179,10 @@ section, footer
       color: $grayL
       font-size: 1.4em
       font-weight: $regular
+      @include screen(x-small)
+        font-size: 1em
+        text-overflow: ellipsis
+        overflow: hidden
     .sendBtn
       color: $white
       font-weight: $semiBold
