@@ -1,40 +1,57 @@
 #fields
+  overflow: hidden
   position: relative
   .fieldBoxesWrap
     display: flex
-    justify-content: center
-
-    .fieldBox
+    justify-content: center    
+    .swiper-wrapper
       display: flex
-      flex-direction: column
       justify-content: center
-      align-items: center
-      background: $whiteBG
-      box-shadow: 0px 10px 30px -8px lighten($grayL, 28%)
-      width: calc(80% / 5)
-      margin-right: calc(20% / 5)
-      padding: 2em 1em
-      border-radius: 1em
-      cursor: pointer
-      transition: box-shadow .2s ease-in-out 1ms, transform .3s ease-in-out
-      z-index: 3
-      &:hover
-        transform: translateY(-.5em)
-        box-shadow: 0px 10px 30px -8px lighten($grayL, 20%)
-      &:hover > svg g#Main g#Desktop
-        fill: $turqoise
+      @include screen(large)
+        justify-content: normal
+        
+      .swiper-slide-active
+        opacity: 1 !important
+        transform: scale(1) !important
+      .fieldBox
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: $whiteBG
+        box-sizing: border-box
+        box-shadow: 0px 10px 30px -8px lighten($grayL, 28%)
+        width: calc(80% / 5)
+        margin-right: calc(20% / 5)
+        padding: 2em 1em
+        border-radius: 1em
+        cursor: pointer
+        transition: box-shadow .2s ease-in-out 1ms, transform .3s ease-in-out
+        z-index: 3
+        @include screen(large)
+          opacity: .5
+          margin: 0
+          transform: scale(.8)
+        &:hover
+          transform: translateY(-.5em)
+          box-shadow: 0px 10px 30px -8px lighten($grayL, 20%)
+        &:hover > svg g#Main g#Desktop
+          fill: $turqoise
 
-      g#Desktop
-        transition: fill .2s ease-in-out 1ms
+        g#Desktop
+          transition: fill .2s ease-in-out 1ms
 
 
-      svg
-        height: 4em
-        margin-bottom: 1em
+        svg
+          height: 4em
+          margin-bottom: 1em
 
   .content
-    display: flex
-    justify-content: center
+    //display: flex
+    //justify-content: center
     margin-top: 4em
-    p
-      z-index: 3
+    .textFoot
+      z-index: 2
+  
+  .ocean 
+    z-index: -1

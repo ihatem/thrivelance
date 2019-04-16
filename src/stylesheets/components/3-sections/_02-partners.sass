@@ -8,12 +8,9 @@
     background: $grayS
     border: 0
   .logosWrap
-    // display: flex
-    // justify-content: space-between
-    // align-items: center
-    // margin: 1.6em 0
     position: relative
     overflow: hidden
+
     .overlayRight 
       right: 0
       background: linear-gradient(to right, rgba(255,255,255,0) 0%, $whiteBG 100%)
@@ -33,10 +30,11 @@
       @include screen(large)
         display: block
     .swiper-wrapper 
-      // display: flex
-      // justify-content: space-between
-      // align-items: center
+      display: flex
+      justify-content: space-between
+      align-items: center
       margin: 1.5em 0
       svg 
         display: block
+        width: auto
         height: 38px

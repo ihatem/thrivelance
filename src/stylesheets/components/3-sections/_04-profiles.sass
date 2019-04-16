@@ -4,14 +4,18 @@
 
   .profilesWrap
     display: flex
-    position: 
     width: 70%
-    overflow: hidden
+    
     margin: 0 auto
     justify-content: center
     @include screen(large)
       width: 100%
+      overflow: hidden
     .swiper-wrapper
+      display: flex
+      justify-content: center
+      @include screen(large)
+        justify-content: normal
       .swiper-slide-active
         transform: scale(1) !important
         opacity: 1 !important
@@ -21,13 +25,15 @@
         box-sizing: border-box
         position: relative
         border-bottom: .3em solid transparent
-        transition: border-color .2s ease-in-out
+        transform-origin: center
+        transition: all .3s ease-in-out
+        margin-right: 2em
         @include screen(large) 
           transform: scale(.7)
           opacity: .5
+          margin: 0
         @include screen(x-small)
           transform: scale(.9) !important
-        
         &:hover
           border-color: $pink
         &:last-child
@@ -167,12 +173,13 @@
             .swiper-wrapper
               .swiper-slide
                 width: auto
-  .swiper-pagination
+  .swiper-pagination-profiles
     display: none
     position: inherit
     margin: 0 auto
     @include screen(x-small)
-      display: block
+      display: flex
+      justify-content: center
     .swiper-pagination-bullet
       width: 30px
       border-radius: 10px

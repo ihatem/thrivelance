@@ -19,6 +19,7 @@ module.exports = {
     : 'development',
   devtool: 'cheap-eval-source-map',
   devServer: {
+    disableHostCheck: true,
     contentBase: path.join(config.root, config.paths.src),
     watchContentBase: true,
     hot: true,

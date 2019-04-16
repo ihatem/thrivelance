@@ -68,7 +68,7 @@ section, footer
         color: $pink
         border-bottom: .1em solid transparent
         transition: all .2s ease-in-out
-        &:hover
+        &:hover, &:active
           border-color: $pink
     .textFoot
       font-size: 1.1em
@@ -196,16 +196,23 @@ footer
   .copyText
     color: $grayL
     text-align: center
-  table
+  .newsletterHead
+    h3, h2 
+      text-align: left
+      @include screen(large)
+        text-align: center
+  .sitemapBox
     display: flex
     justify-content: flex-end
     text-align: left
-    th
+    .aboutHead, 
+    .discoverHead
       font-family: "Montserrat", sans-serif
       font-weight: $bold
       font-size: 1.4em
       color: $grayD
-    td
+    ul
+      list-style: none
       .footerLink
         font-family: "Montserrat", sans-serif
         font-weight: $light

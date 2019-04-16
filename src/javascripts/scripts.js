@@ -1,10 +1,79 @@
-import Swiper from 'swiper'
-import anime from 'animejs/lib/anime.es.js'
-import { timeout } from 'q';
+import anime from 'animejs/lib/anime.es'
+import swipers from './components/swipers'
 
 const planBox = document.querySelectorAll('.planBox')
 const toggle = document.getElementById('toggle')
 const hamburger = document.getElementById('hamburger')
+const aboutList = document.querySelector('.aboutList')
+const discoverList = document.querySelector('.discoverList')
+const aboutBtn = document.querySelector('.aboutHead')
+const discoverBtn = document.querySelector('.discoverHead')
+const arrowIcon = document.querySelectorAll('.arrowIcon')
+const figureCount = document.querySelectorAll(".figureCounter");
+const priceCount = document.querySelectorAll(".priceText");
+
+swipers(); 
+
+let expandList = (list, height, opacity, overflow) => {
+  anime({
+    targets: list,
+    overflow: overflow,
+    maxHeight: height,
+    opacity: opacity,
+    easing: 'easeInOutQuad',
+    duration: 100,
+  })
+}
+
+const screenTest = (e) => {
+  if (e.matches) {
+    expandList(aboutList, 0, 0, "hidden");
+    expandList(discoverList, 0, 0, "hidden");
+    arrowIcon[0].classList.remove("arrowActive");
+    arrowIcon[1].classList.remove("arrowActive");
+    
+  } else {
+    expandList(aboutList, "300px", 1, "visible");
+    expandList(discoverList, "300px", 1, "visible");
+    aboutBtn.classList.remove("footerHeadActive");
+    discoverBtn.classList.remove("footerHeadActive");
+  }
+}
+
+if (matchMedia) {
+	const mq = window.matchMedia("(max-width: 1175px)");
+	mq.addListener(screenTest);
+	screenTest(mq);
+}
+
+aboutBtn.addEventListener('click', () => {
+  if (window.innerWidth <= 1175) {
+    if (arrowIcon[0].classList.length == 1) {
+      arrowIcon[0].classList.add("arrowActive");
+      aboutBtn.classList.add("footerHeadActive");
+      expandList(aboutList, "300px", 1, "visible");
+    } else {
+      arrowIcon[0].classList.remove("arrowActive");
+      aboutBtn.classList.remove("footerHeadActive");
+      expandList(aboutList, 0, 0, "hidden");
+    }
+  }
+})
+
+discoverBtn.addEventListener('click', () => {
+  if (window.innerWidth <= 1175) {
+    if (arrowIcon[1].classList.length == 1) {
+      arrowIcon[1].classList.add("arrowActive");
+      discoverBtn.classList.add("footerHeadActive");
+      expandList(discoverList, "300px", 1, "visible");
+    } else {
+      arrowIcon[1].classList.remove("arrowActive");
+      discoverBtn.classList.remove("footerHeadActive");
+      expandList(discoverList, 0, 0, "hidden");
+    }
+  }
+})
+
 
 hamburger.addEventListener('click', () => {
   if (hamburger.classList.contains('is-active')) {
@@ -16,13 +85,18 @@ hamburger.addEventListener('click', () => {
 
 const toggleCheck = () => {
   if (toggle.checked) {
-    document.querySelectorAll('.price > p')[1].innerHTML = 69
-    document.querySelectorAll('.price > p')[2].innerHTML = 99
-    document.querySelectorAll('.price > span')[2].innerHTML = '€'
+    // animateValue(index, start, end, duration, selector)
+    animateValue(0, 9, 69, 300, priceCount);
+    animateValue(1, 5, 99, 300, priceCount);
+    setTimeout( () => { 
+      document.querySelectorAll('.price > span')[2].innerHTML = '€'
+    }, 400);
   } else {
-    document.querySelectorAll('.price > p')[1].innerHTML = 9
-    document.querySelectorAll('.price > p')[2].innerHTML = 5
-    document.querySelectorAll('.price > span')[2].innerHTML = '%'
+    animateValue(0, 69, 9, 300, priceCount);
+    animateValue(1, 99, 5, 300, priceCount);
+    setTimeout( () => { 
+      document.querySelectorAll('.price > span')[2].innerHTML = '%'
+    }, 400);
   }
 }
 
@@ -51,128 +125,6 @@ planBox.forEach( (elem, i) => {
 });
 
 
-new Swiper('.tagsWrap', {
-  slidesPerView: 'auto',
-  spaceBetween: 10,
-  freeMode: true,
-});
-
-new Swiper('.testimonSlider', {
-  effect: "slider",
-  slidesPerView: 2,
-  spaceBetween: 30,
-  loop: true,
-  centeredSlides: true,
-  breakpoints: {
-    700: {
-      spaceBetween: 0,
-    },
-    485: {
-      slidesPerView: 1,
-    },
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
-new Swiper('.logosWrap', {
-  effect: "slider",
-  slidesPerView: 5,
-  spaceBetween: 30,
-	allowSlidePrev: false,
-	allowSlideNext: false,
-	autoplay: false,
-	keyboard: false,
-  loop: true,
-  centeredSlides: true,
-  breakpoints: {
-    1175: {
-      slidesPerView: 3,
-      allowSlidePrev: true,
-      allowSlideNext: true,
-      spaceBetween: 10,
-      autoplay: true,
-      keyboard: true,
-    },
-    600: {
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-    },
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
-new Swiper('.profilesWrap', {
-  effect: "slider",
-  slidesPerView: 3,
-  spaceBetween: 30,
-	allowSlidePrev: false,
-	allowSlideNext: false,
-	autoplay: false,
-	keyboard: false,
-  loop: true,
-  centeredSlides: true,
-  breakpoints: {
-    1175: {
-      allowSlidePrev: true,
-      allowSlideNext: true,
-      spaceBetween: 10,
-      autoplay: true,
-      keyboard: true,
-      slidesPerView: 2,
-    },
-    600: {
-      spaceBetween: 5,
-    },
-    380: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-    }
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
-
-
-      
-new Swiper('.planBoxesWrap', {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  allowSlidePrev: false,
-	allowSlideNext: false,
-	autoplay: false,
-	keyboard: false,
-  breakpoints: {
-    1175: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      allowSlidePrev: true,
-      allowSlideNext: true,
-      autoplay: true,
-      keyboard: true,
-    },
-  },
-  pagination: {
-    el: '.swiper-pagination-plans',
-    clickable: true,
-    renderBullet: function (index, className) {
-      var tab = ["FREE", "PREMIUM", "ENTREPRISE"];
-      console.log(tab);
-      return '<span class="' + className + '">' + tab[index] + '</span>';
-    },
-  },
-  
-});
-
-
 
 function isScrolledIntoView(el) {
   var elemTop = el.getBoundingClientRect().top;
@@ -182,12 +134,12 @@ function isScrolledIntoView(el) {
   return isVisible;
 }
 
-function animateValue(index, start, end, duration) {
+function animateValue(index, start, end, duration, selector) {
   var range = end - start;
   var current = start;
   var increment = end > start ? 1 : -1;
   var stepTime = Math.abs(Math.floor(duration / range));
-  var obj = document.querySelectorAll(".figureCounter")[index];
+  var obj = selector[index];
   var timer = setInterval(function() {
     current += increment;
     obj.innerHTML = current;
@@ -199,12 +151,12 @@ function animateValue(index, start, end, duration) {
 
 let scroll = () => {
   if (isScrolledIntoView(document.querySelector('.figuresWrap'))) {
-    console.log('counting');
-    animateValue(0, 0, 3, 600);
-    animateValue(1, 0, 1, 600);
-    animateValue(2, 0, 74, 600);
-    animateValue(3, 0, 3, 600);
+    animateValue(0, 0, 3, 600, figureCount);
+    animateValue(1, 0, 1, 600, figureCount);
+    animateValue(2, 0, 74, 600, figureCount);
+    animateValue(3, 0, 3, 600, figureCount);
     window.onscroll = null;
   }
 }
+
 window.onscroll = scroll;

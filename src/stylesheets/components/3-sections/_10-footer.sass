@@ -2,14 +2,20 @@ footer
   background: $white
   .newsletterWrap
     display: flex
-    h2, h3
-      text-align: left !important
+    @include screen(large)
+      flex-direction: column
     .newsletterHead
       width: 35%
+      @include screen(large)
+        width: 100%
+        display: flex
+        flex-direction: column 
       .subNews
         margin: 1em 0
       .newsletterForm
         display: flex
+        @include screen(large)
+          justify-content: center
         input
           border: 0
           width: 70%
@@ -50,13 +56,46 @@ footer
 
     .sitemapBox
       width: 65%
-      table
-        tr
-          td
-            padding-right: 2.5em
-            padding-top: .8em
-            &:last-child
-              padding-right: 0
+      @include screen(large)
+        display: flex
+        flex-direction: column
+        width: 100%
+      .footerHeadActive
+        background: $grayI
+      .aboutHead, 
+      .discoverHead
+        @include screen(large)
+          padding: 1em 1em
+          box-sizing: border-box
+          border-top: .2em solid $grayI
+          border-bottom: .2em solid $grayI
+          //background: transparent
+          display: flex
+          justify-content: space-between
+          align-items: center
+          cursor: pointer
+          transition: background .3s ease-in-out
+        .arrowIconWrap
+          width: 1em
+          height: 1em
+          display: none 
+          @include screen(large)
+            display: block
+          .arrowActive 
+            transform: rotate(180deg)
+      .aboutLinks
+        padding-right: 2.5em
+        @include screen(large)
+          padding: 0
+          margin-bottom: 2em
+      ul 
+        padding: 0
+        margin: 0
+        @include screen(large)
+          padding: 0 1.2em
+          overflow-y: hidden
+        li
+          margin-top: .8em
 
   hr
     margin-top: 8em
