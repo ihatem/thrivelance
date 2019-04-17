@@ -8,5 +8,9 @@ body
   background: $whiteBG
 .head
   margin-bottom: $paddingTop
+  @include screen(x-small)
+    padding: 0 2em
 * 
   transition: all .3s ease-in-out
+.blurred
+  filter: blur(3px)

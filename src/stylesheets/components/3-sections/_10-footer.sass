@@ -10,6 +10,8 @@ footer
         width: 100%
         display: flex
         flex-direction: column 
+      @include screen(x-small)
+        padding: 0
       .subNews
         margin: 1em 0
       .newsletterForm
@@ -49,7 +51,7 @@ footer
           transform: scale(1.2)
           cursor: pointer
           transition: background .3s ease-in-out
-          &:hover
+          &:hover, &:active
             background: $pinkHover
           svg
             height: 50%

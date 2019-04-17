@@ -11,6 +11,7 @@ const discoverBtn = document.querySelector('.discoverHead')
 const arrowIcon = document.querySelectorAll('.arrowIcon')
 const figureCount = document.querySelectorAll(".figureCounter");
 const priceCount = document.querySelectorAll(".priceText");
+const blurredItems = document.querySelectorAll("header > nav > svg, .headerWrap, .ocean > .wave, #features > .head");
 
 swipers(); 
 
@@ -25,18 +26,32 @@ let expandList = (list, height, opacity, overflow) => {
   })
 }
 
+const animNavMenu = (trans) => {
+  anime({
+    targets: '.navMenu > ul',
+    translateX: trans,
+    duration: 100,
+    easing: 'easeOutCubic',
+  })
+}
+
 const screenTest = (e) => {
   if (e.matches) {
     expandList(aboutList, 0, 0, "hidden");
     expandList(discoverList, 0, 0, "hidden");
     arrowIcon[0].classList.remove("arrowActive");
     arrowIcon[1].classList.remove("arrowActive");
-    
+    animNavMenu("100%");    
+    blurredItems.forEach(x => x.classList.remove("blurred"));
+    hamburger.classList.remove('is-active');
   } else {
     expandList(aboutList, "300px", 1, "visible");
     expandList(discoverList, "300px", 1, "visible");
     aboutBtn.classList.remove("footerHeadActive");
     discoverBtn.classList.remove("footerHeadActive");
+    animNavMenu(0);
+    blurredItems.forEach(x => x.classList.add("blurred"));
+    hamburger.classList.add('is-active');
   }
 }
 
@@ -75,11 +90,18 @@ discoverBtn.addEventListener('click', () => {
 })
 
 
+
 hamburger.addEventListener('click', () => {
   if (hamburger.classList.contains('is-active')) {
    hamburger.classList.remove('is-active');
+   animNavMenu("100%");
+  blurredItems.forEach(x => x.classList.remove("blurred"));
+  document.body.style.overflow = "visible";
   } else {
     hamburger.classList.add('is-active');
+    animNavMenu(0);
+    blurredItems.forEach(x => x.classList.add("blurred"));
+    document.body.style.overflow = "hidden";
   }
 })
 
