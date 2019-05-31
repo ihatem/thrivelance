@@ -1,7 +1,13 @@
 # thrivelance
 Gather and team up with freelancers around the world
 
-# Todo List
+## Demo 
+[https://ihatem.github.io/thrivelance/](https://ihatem.github.io/thrivelance/)
+
+## Screenshot 
+![App screenshot!](https://raw.githubusercontent.com/ihatem/thrivelance/master/src/images/thrivelance-sketch.png)
+
+## Todo List
 - [x] change favicon
 - [x] change meta
 - [x] color vars
