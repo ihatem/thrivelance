@@ -1,9 +1,7 @@
 import Swiper from 'swiper'
-import {
-  equal
-} from 'assert';
+// import {equal} from 'assert';
 
-export default function swipers() {
+export let swipers = () => {
 
   const mq = window.matchMedia('(min-width: 1175px)');
   let logosSwiper, profilesSwiper, fieldsSwiper;
@@ -121,3 +119,4 @@ export default function swipers() {
     }
   });
 }
+

@@ -12,13 +12,16 @@ const config = {
   site_name: 'thrivelance',
 
   // Your website's description, used for favicon meta tags
-  site_description: 'Gather and team up with freelancers around the world ',
+  site_description: 'Gather and team up with freelancers around the world',
 
   // Your website's URL, used for sitemap
   site_url: 'https://ihatem.github.io/thrivelance',
 
+  // Google Analytics tracking ID (leave blank to disable)
+  googleAnalyticsUA: '',
+
   // The viewport meta tag added to your HTML page's <head> tag
-  viewport: 'width=device-width,minimum-scale=1,maximum-scale=1',
+  viewport: 'width=device-width,initial-scale=1',
 
   // Source file for favicon generation. 512x512px recommended.
   favicon: path.join(ROOT, '/src/images/favicon.svg'),

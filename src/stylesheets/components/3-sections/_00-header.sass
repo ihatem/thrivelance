@@ -1,3 +1,45 @@
+
+.slideout-menu 
+  background: $grayD
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  width: 256px
+  min-height: 100vh
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  z-index: 0
+  display: none
+
+  ul 
+    list-style: none
+    margin: 0 
+    padding: 0
+    padding: 4em 2em
+    li 
+      margin-bottom: 2em 
+      &:last-child 
+        margin: 0
+      a 
+        text-decoration: none
+        color: $white
+        &:hover 
+          color: $pink
+
+
+.slideout-panel
+  position: relative
+  z-index: 1
+  will-change: transform
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel
+  overflow: hidden
+
+.slideout-open .slideout-menu 
+  display: block
 header
   @include gradient
   padding: 2em $paddingSide
@@ -29,40 +71,40 @@ header
       @include screen(large)
         display: block
       
-
+    
     .navMenu
       @include screen(large)
-        position: absolute
-        top: 0
-        right: 0
-        height: 100vh
-        width: 40%
-        overflow: hidden
-      @include screen(small)
-        width: 80%
+        display: none
+      //   top: 0
+      //   right: 0
+      //   height: 100vh
+      //   width: 40%
+      //   overflow: hidden
+      // @include screen(small)
+      //   width: 80%
       ul
         list-style: none
         display: flex
         align-items: center
-        @include screen(large)
-          align-items: flex-start
-          flex-direction: column
-          justify-content: center
-          height: 100%
-          width: 100%
-          margin: 0
-          padding: 0 2em
-          background: $grayD
-          transform: translateX(100%)
-          z-index: 5
+        // @include screen(large)
+        //   align-items: flex-start
+        //   flex-direction: column
+        //   justify-content: center
+        //   height: 100%
+        //   width: 100%
+        //   margin: 0
+        //   padding: 0 2em
+        //   background: $grayD
+        //   transform: translateX(100%)
+        //   z-index: 5
         li
           margin-right: 2.1em
           text-transform: uppercase
           color: $white
           &:last-child
             margin-right: 0
-          @include screen(large)
-            margin: 0 0 2em 0
+          // @include screen(large)
+          //   margin: 0 0 2em 0
             &:last-child 
               margin-bottom: 0
 

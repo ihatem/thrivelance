@@ -1,5 +1,7 @@
 import anime from 'animejs/lib/anime.es'
-import swipers from './components/swipers'
+import Slideout from 'slideout'
+import {swipers} from './components/swipers'
+import SmoothScroll from "smooth-scroll/dist/smooth-scroll.min.js"
 
 const planBox = document.querySelectorAll('.planBox')
 const toggle = document.getElementById('toggle')
@@ -12,6 +14,55 @@ const arrowIcon = document.querySelectorAll('.arrowIcon')
 const figureCount = document.querySelectorAll(".figureCounter");
 const priceCount = document.querySelectorAll(".priceText");
 const blurredItems = document.querySelectorAll("header > nav > svg, .headerWrap, .ocean > .wave, #features > .head");
+
+let ddd = new SmoothScroll('a[href*="#"]', {
+	speed: 300
+});
+
+let slid = new Slideout({
+  'panel': document.getElementById('main'),
+  'menu': document.getElementById('navMenuMob'),
+  'padding': 256,
+  'tolerance': 70, 
+  'side': 'right', 
+  // 'touch': false
+});
+
+// slid.on('open', () => {
+//   console.log("slide OPENED" + slid.options)
+//   slid.enableTouch();
+// })
+
+// slid.on('close', () => {
+//   console.log("slide CLOSED" + slid.options)
+//   slid.disableTouch();
+// })
+
+document.getElementById("main").addEventListener('click', (e) => {
+  // if (e.target !== document.getElementById("hamburger") && slid.isOpen()) {
+  //   slid.close()
+  // }
+  if (document.getElementById('hamburger').contains(e.target) && !slid.isOpen()){
+    slid.toggle();
+    //slid.enableTouch();
+  } else{
+    // Clicked outside the box
+    slid.close();
+    //slid.disableTouch();
+  }
+})
+
+document.onkeydown = function(evt) {
+  evt = evt || window.event;
+  if (evt.keyCode == 27 && slid.isOpen()) {
+    slid.close();
+  }
+};
+
+document.getElementById('navMenuMob').addEventListener('click', function(eve) {
+  console.log(eve.target.nodeName);
+  if (eve.target.nodeName === 'A') { slid.close(); }
+});
 
 swipers(); 
 
@@ -41,17 +92,17 @@ const screenTest = (e) => {
     expandList(discoverList, 0, 0, "hidden");
     arrowIcon[0].classList.remove("arrowActive");
     arrowIcon[1].classList.remove("arrowActive");
-    animNavMenu("100%");    
-    blurredItems.forEach(x => x.classList.remove("blurred"));
-    hamburger.classList.remove('is-active');
+    // animNavMenu("100%");    
+    // blurredItems.forEach(x => x.classList.remove("blurred"));
+    // hamburger.classList.remove('is-active');
   } else {
     expandList(aboutList, "300px", 1, "visible");
     expandList(discoverList, "300px", 1, "visible");
     aboutBtn.classList.remove("footerHeadActive");
     discoverBtn.classList.remove("footerHeadActive");
-    animNavMenu(0);
-    blurredItems.forEach(x => x.classList.add("blurred"));
-    hamburger.classList.add('is-active');
+    // animNavMenu(0);
+    // blurredItems.forEach(x => x.classList.add("blurred"));
+    // hamburger.classList.add('is-active');
   }
 }
 
@@ -91,19 +142,19 @@ discoverBtn.addEventListener('click', () => {
 
 
 
-hamburger.addEventListener('click', () => {
-  if (hamburger.classList.contains('is-active')) {
-   hamburger.classList.remove('is-active');
-   animNavMenu("100%");
-  blurredItems.forEach(x => x.classList.remove("blurred"));
-  document.body.style.overflow = "visible";
-  } else {
-    hamburger.classList.add('is-active');
-    animNavMenu(0);
-    blurredItems.forEach(x => x.classList.add("blurred"));
-    document.body.style.overflow = "hidden";
-  }
-})
+// hamburger.addEventListener('click', () => {
+//   if (hamburger.classList.contains('is-active')) {
+//    hamburger.classList.remove('is-active');
+//    animNavMenu("100%");
+//   blurredItems.forEach(x => x.classList.remove("blurred"));
+//   document.body.style.overflow = "visible";
+//   } else {
+//     hamburger.classList.add('is-active');
+//     animNavMenu(0);
+//     blurredItems.forEach(x => x.classList.add("blurred"));
+//     document.body.style.overflow = "hidden";
+//   }
+// })
 
 const toggleCheck = () => {
   if (toggle.checked) {
@@ -171,7 +222,7 @@ function animateValue(index, start, end, duration, selector) {
   }, stepTime);
 }
 
-let scroll = () => {
+let scrolled = () => {
   if (isScrolledIntoView(document.querySelector('.figuresWrap'))) {
     animateValue(0, 0, 3, 600, figureCount);
     animateValue(1, 0, 1, 600, figureCount);
@@ -181,4 +232,4 @@ let scroll = () => {
   }
 }
 
-window.onscroll = scroll;
+window.onscroll = scrolled;

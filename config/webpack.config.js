@@ -17,15 +17,17 @@ module.exports = {
   mode: ['production', 'development'].includes(config.env)
     ? config.env
     : 'development',
-  devtool: 'cheap-eval-source-map',
+  devtool: config.env === 'production'
+    ? 'hidden-source-map'
+    : 'cheap-eval-source-map',
   devServer: {
-    disableHostCheck: true,
     contentBase: path.join(config.root, config.paths.src),
     watchContentBase: true,
     hot: true,
     open: true,
     port: config.port,
     host: config.dev_host,
+    disableHostCheck: true
   },
   module: {
     rules: loaders,

@@ -1,6 +1,7 @@
 module.exports = {
   "ignoreFiles": ["**/*.sass"],
   "extends": "stylelint-config-standard",
+  // "plugins": ["stylelint-scss"],
   // .sass syntax support
   "rules": {
     "block-closing-brace-empty-line-before": null,
@@ -20,3 +21,4 @@ module.exports = {
     "declaration-block-trailing-semicolon" : "never"
   }
 }
+
