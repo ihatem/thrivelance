@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ihatem.github.io/thrivelance/sitemap.xml
+Host: https://ihatem.github.io
