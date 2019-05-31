@@ -1,3 +1,4 @@
+/* eslint-disable */
 import anime from 'animejs/lib/anime.es'
 import Slideout from 'slideout'
 import {swipers} from './components/swipers'

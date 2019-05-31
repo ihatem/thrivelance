@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Swiper from 'swiper'
 // import {equal} from 'assert';
 
