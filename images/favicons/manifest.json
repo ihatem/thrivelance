@@ -1,7 +1,7 @@
 {
-  "name": "thrivelance",
-  "short_name": "thrivelance",
-  "description": "Gather and team up with freelancers around the world",
+  "name": "Static Site Boilerplate",
+  "short_name": "Static Site Boilerplate",
+  "description": "A modern boilerplate for static website development",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
