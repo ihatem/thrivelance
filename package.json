@@ -75,7 +75,7 @@
     "webapp-webpack-plugin": "^2.4.0",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
-    "webpack-merge": "^4.1.5",
+    "webpack-merge": "^5.3.0",
     "webpackbar": "^3.1.4"
   },
   "dependencies": {
