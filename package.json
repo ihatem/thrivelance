@@ -91,7 +91,7 @@
     "sanitize.css": "^11.0.1",
     "slideout": "^1.0.1",
     "smooth-scroll": "^16.0.3",
-    "swiper": "^4.5.0",
+    "swiper": "^6.4.9",
     "webpack-dev-server": "^3.11.0"
   }
 }
