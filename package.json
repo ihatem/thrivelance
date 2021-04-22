@@ -80,7 +80,7 @@
   },
   "dependencies": {
     "animejs": "^3.0.1",
-    "chalk": "^2.4.1",
+    "chalk": "^4.1.1",
     "clear": "^0.1.0",
     "enquirer": "^2.2.0",
     "figlet": "^1.2.1",
